@@ -152,7 +152,7 @@ function loadContent (fileName) {
 };
 function convertMarkdown() {
     const file = urlParams()
-    window.location.href = window.location.origin + "/markdown.html" + "?file=" + file; 
+    window.location.href = window.location.origin + window.location.pathname + "markdown.html" + "?file=" + file; 
 }
 function pageLoad () {
     loadFileMenu();
