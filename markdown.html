@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>Notas em Markdown</title>
+    </head>
+    <body>
+        <header style="font-size: 120%;background-color: black; padding: 0.05%; color:white; text-align: center;">
+            <div style="display: inline-flexbox;margin: 0; padding:0;">
+                <nav>
+                    <ul style="list-style-type: none; float: inline-end;">
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </nav>
+                <h1>Notas em Markdown</h1>
+            </div>
+            <div style="margin: 0; padding:0;">
+                <nav>
+                    <ul style="list-style-type: none; display: flex; flex-wrap: wrap;">
+                        <li style="margin: auto;"><a onclick="window.print()" href="#">Baixar</a></li>
+                        <li style="margin: auto;"><a id="markdownBtn" href="#">Editar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="app">
+                <div id="markdownDiv"></div>
+        </section>
+        <footer>
+            <h3>Criado por Guilherme Giusti. Hospedado em <a href="https://github.com/guigiusti">Github</a>.</h3>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="markdown.js"></script>
+    </body>
+</html>
