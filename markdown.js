@@ -1,5 +1,7 @@
 const { jsPDF } = window.jspdf;
-var db, dbObjStore, repeat, mdHTML;
+var db, dbObjStore, repeat, mdHTML, basepath;
+
+basepath = '/NotasEmMarkdown/'
 
 function htmlToPDF () {
     const pdf = new jsPDF({
@@ -103,7 +105,7 @@ function pageLoad () {
     const btn = document.getElementById("markdownBtn");
     btn.addEventListener("click", () => {
         const file = urlParams();
-        window.location.href = window.location.origin + window.location.pathname + "?file=" + file; 
+        window.location.href = window.location.origin + window.basepath + "?file=" + file; 
     });
     };
 openDB();
