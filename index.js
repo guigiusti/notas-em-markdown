@@ -1,4 +1,3 @@
-const { jsPDF } = window.jspdf;
 var db, dbObjStore, repeat;
 
 function urlParams () {
@@ -38,7 +37,7 @@ function fileRegex(fileName) {
 function fileButtonAppend(title) {
     const button = document.createElement("button");
     const a = document.createElement("a");
-    a.href = "?file=" + title + "&markdown=0";
+    a.href = "?file=" + title;
     a.innerHTML= title;
     button.append(a);
     const div = document.getElementById("filesMenu");
@@ -76,15 +75,17 @@ function createFile () {
 function downloadFile () {
     const fileName = urlParams();
     const content = document.getElementById("appInput");
+    const file = new File ([content.value], fileName, {type: "text/markdown",});
     const link = document.createElement("a");
     link.download = fileName;
-    console.log(content.value)
-    link.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content.value))
-    link.style.display = "none"
+    const url = URL.createObjectURL(file);
+    link.href = url;
+    link.style.display = "none";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
+    URL.revokeObjectURL(url);
+}
 function deleteFile() {
     const file = urlParams();
     let db = window.db;

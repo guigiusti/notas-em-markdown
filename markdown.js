@@ -1,5 +1,23 @@
 const { jsPDF } = window.jspdf;
-var db, dbObjStore, repeat;
+var db, dbObjStore, repeat, mdHTML;
+
+function htmlToPDF () {
+    const pdf = new jsPDF({
+        format: 'a4',
+        orientation: "portrait",
+        unit: "mm",
+    });
+    const source = window.mdHTML;
+    pdf.html(source, {
+        callback: function (pdf) {
+          pdf.save("output.pdf");
+        },
+        width: 210,
+        windowWidth: 1080 ,
+        autoPaging: 'text'
+      });
+}
+
 
 function urlParams () {
     const url = new URL (window.location.href);
@@ -70,6 +88,12 @@ function pageLoad () {
             const div = document.getElementById("markdownDiv");
             div.innerHTML = markdown;
             div.style = "height:100%;"
+            const md = document.createElement("div")
+            md.innerHTML = markdown
+            md.style.letterSpacing = "0.01px";
+            md.style.fontSize = "130%";
+            md.style.margin = "5%";
+            window.mdHTML = md;
         });
     }else {
         markdown = marked.parse("# Erro Arquivo não encontrado!")
