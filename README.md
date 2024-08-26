@@ -1,6 +1,6 @@
 # Notas em Markdown
 
-Aplicativo Web para anotações em Markdown feito para estudo próprio. Salvo localmente no próprio navegador, permitindo a criação de vários arquivos. Contém funções de editar o texto em Markdown, exibir em HTML e baixar o arquivo em md e em pdf.
+Aplicativo Web para anotações em Markdown, feito para estudo próprio. Salvo localmente no próprio navegador, permitindo a criação de vários arquivos. Contém funções de editar o texto em Markdown, exibir em HTML e baixar o arquivo em md e em pdf.
 
 ### [DEMO](https://guigiusti.com/NotasEmMarkdown/)
 ## Tecnologias
