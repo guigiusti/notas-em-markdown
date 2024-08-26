@@ -103,7 +103,7 @@ function pageLoad () {
     const btn = document.getElementById("markdownBtn");
     btn.addEventListener("click", () => {
         const file = urlParams();
-        window.location.href = window.location.origin + "/" + "?file=" + file; 
+        window.location.href = window.location.origin + window.location.pathname + "?file=" + file; 
     });
     };
 openDB();
