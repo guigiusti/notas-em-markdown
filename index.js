@@ -13,21 +13,18 @@ function checkForFileParams () {
         const request = objectStore.getAll();
         const file = urlParams();
         if (file != "") {
-            if (file != null) {
+            if (file != null) { 
                 request.onsuccess = () => {
                     const req = request.result;
                     req.forEach(element => {
                         const reqFile = element['fileTitle']
                         if (reqFile == file) {
                             resolve(1);
-                        } else {
-                            resolve(0);
-                        }
+                        };
                     });
                 };
-            };
-        };
-        
+            } else {resolve(0)};
+        }else resolve(0);
     });
 };
 function fileRegex(fileName) {
