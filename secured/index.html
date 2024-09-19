@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml">
+        <meta charset="UTF-8">
+        <title>Notas em Markdown</title>
+    </head>
+    <body>
+        <noscript>Este aplicativo necessita de Javascript para funcionar!</noscript>
+        <div id="app">
+            <header style="font-size: 120%;background-color: black; padding: 0.05%; color:white; text-align: center;">
+                <div style="display: inline-flexbox;margin: 0; padding:0;">
+                    <nav>
+                        <ul style="list-style-type: none; float: inline-end;">
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </nav>
+                    <h1>Notas em Markdown</h1>
+                </div>
+                <div id="headerButtons" style="margin: 0; padding:0; display:none;">
+                    <nav>
+                        <ul style="list-style-type: none; display: flex; flex-wrap: wrap;">
+                            <li style="margin: auto;"><a onclick="createFile()" href="#">Criar</a></li>
+                            <li style="margin: auto;"><a onclick="downloadFile()" href="#">Baixar</a></li>
+                            <li style="margin: auto;"><a id="markdownBtn" onclick="convertMarkdown()" href="#">Markdown</a></li>
+                            <li style="margin: auto;"><a onclick="deleteFile()" href="#">Deletar</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div id="main"></div>
+            <div id="login" style="display: none;">
+                <form style="text-align: center;">
+                    <table>
+                        <tr>
+                            <td>
+                                <label style="color:white;"for="senha">Digite sua Senha</label>
+                            </td>
+                            <td>
+                                <input type="password" id="senha">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: right;"><input onclick="login()" type="submit" value="Enviar"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <footer style="display:none" id="appFooter">
+                <h3>Criado por Guilherme Giusti. Hospedado em <a href='https://github.com/guigiusti'>Github</a>.</h3>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="notesCrypto.js"></script>
+        <script src="notesDB.js"></script>
+        <script src="notesMain.js"></script>
+    </body>
+</html>
