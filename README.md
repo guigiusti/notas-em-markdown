@@ -2,7 +2,7 @@
 
 Aplicativo Web para anotações em Markdown, feito para estudo próprio. Salvo localmente no próprio navegador, permitindo a criação de vários arquivos. Contém funções de editar o texto em Markdown, exibir em HTML e baixar o arquivo em md e em pdf.
 
-### [DEMO](https://guigiusti.com/NotasEmMarkdown/)
+### [DEMO](https://guigiusti.com/notas-em-markdown/)
 ## Tecnologias
 
 - Feito em HTML, CSS e Javascript.
